@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title',300)->nullable(false);
+            $table->string('title',500)->nullable(false);
             $table->string('summary',1000)->nullable(false);
-            $table->string('url',300)->nullable(false);
-            $table->string('image_url',300)->nullable(true);
+            $table->string('url',1500)->nullable(false);
+            $table->string('image_url',1500)->nullable(true);
             $table->dateTime('published_at')->nullable(false);
             $table->foreignId('source_id');
             $table->foreignId('article_category_id');

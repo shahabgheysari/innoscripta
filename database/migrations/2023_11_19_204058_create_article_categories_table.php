@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('article_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('external_id',100)->unique();
-            $table->string('title',100);
+            $table->string('external_id',100)->nullable(true);
+            $table->string('title',100)->unique()->nullable(false);
         });
     }
 
