@@ -3,17 +3,19 @@
 namespace App\Services\NewsFetchService\NewYorkTimes;
 
 use App\Services\NewsFetchService\Contracts\NewsSourceFetchInterface;
+use App\Services\NewsFetchService\Contracts\NewsSourceInfoInterface;
 use App\Services\NewsFetchService\Model\FetchArticleOutput;
 
-class NewYorkTimesFetch implements NewsSourceFetchInterface
+class NewYorkTimesFetch implements NewsSourceFetchInterface, NewsSourceInfoInterface
 {
+    use InfoTrait;
 
     /**
      * @inheritDoc
      */
     public function makeFetchUrls(): array
     {
-        return [env('NEWS_SOURCE_NYT_URL')."?api-key=".env('NEWS_SOURCE_NYT_API_KEY')];
+        return [env('NEWS_SOURCE_NYT_URL') . "?api-key=" . env('NEWS_SOURCE_NYT_API_KEY')];
     }
 
     public function processResponse(string $content): array

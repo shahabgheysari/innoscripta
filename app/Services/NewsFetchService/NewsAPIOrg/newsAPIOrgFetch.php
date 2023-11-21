@@ -3,10 +3,13 @@
 namespace App\Services\NewsFetchService\NewsAPIOrg;
 
 use App\Services\NewsFetchService\Contracts\NewsSourceFetchInterface;
+use App\Services\NewsFetchService\Contracts\NewsSourceInfoInterface;
 use App\Services\NewsFetchService\Model\FetchArticleOutput;
 
-class newsAPIOrgFetch implements NewsSourceFetchInterface
+class newsAPIOrgFetch implements NewsSourceFetchInterface, NewsSourceInfoInterface
 {
+    use InfoTrait;
+
     private array $categories = ["entertainment",
         "business",
         "general",
