@@ -33,8 +33,9 @@ NEWS_SOURCE_THEGUARDIAN_SECTIONS_URL=https://content.guardianapis.com/sections
 - [document](APIsSpecification.yaml) use any OpenAPI viewer to see the doc (eg. [swagger](https://swagger.io/tools/swagger-ui/))
 
 # Should be Implemented
-- preventing of saving repetitive articles
-- tests
+- Preventing of saving repetitive articles
+- Tests
+- Dockerizing
 
 # Selected News Sources
 - newsapi.org
