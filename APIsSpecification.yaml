@@ -1,0 +1,118 @@
+openapi: 3.0.3
+info:
+  title: News Aggregator APIs Specification
+  description: News Aggregator APIs Specification
+  version: 1.0.0
+servers:
+  - url: '/api/v1'
+tags:
+  - name: news
+    description: reading news API
+paths:
+  /news:
+    get:
+      tags:
+        - news
+      parameters:
+        - in: query
+          name: category
+          required: false
+          description: category of news
+          schema:
+            type: string
+            description: category of news
+            example: general
+        - in: query
+          name: date_from
+          description: for selecting a date range
+          required: false
+          schema:
+            type: string
+            format: date
+            example: 2023-11-21
+        - in: query
+          name: date_to
+          required: false
+          description: for selecting a date range
+          schema:
+            type: string
+            format: date
+            example: 2023-11-23
+        - in: query
+          name: source
+          required: false
+          description: the source of news
+          schema:
+            type: string
+            example: Google News
+      responses:
+        '200':
+          description: articles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: ID of news
+                      example: 23
+                    title:
+                      type: string
+                      description: News Title
+                      example: "Sam Altman looking forward’ to return to OpenAI"
+                    summary:
+                      type: string
+                      description: Summary of news
+                      example: "Summary of News"
+                    url:
+                      type: string
+                      description: news source url
+                      format: url
+                      example: "https://news.google.com/rss/articles/CBMiSGh0dHBzOi8vY2EubW92aWVzLnlhaG9v"
+                    image_url:
+                      type: string
+                      format: url
+                      description: Image Url
+                      example: "https://news.org/images/image.png"
+                    published_at:
+                      type: string
+                      description: publishing date of news
+                      format: dateTime
+                      example: "2023-11-21 10:32:42"
+                    source_id:
+                      type: integer
+                      description: news source id(our application id)
+                      example: 23,
+                    article_category_id:
+                      type: integer
+                      description: article category id (our application id)
+                      example: 133,
+                    created_at:
+                      type: string
+                      format: dataTime
+                      description: date of saving
+                      example: '2023-11-23 09:20:00'
+                    updated_at:
+                      type: string
+                      format: dataTime
+                      description: date of last update
+                      example: '2023-11-23 09:40:00'
+                    country:
+                      type: string
+                      description: related news country
+                      example: US,
+                    language:
+                      type: string
+                      description: related news language
+                      example: en
+
+
+      security: []
+
+
+
+
+
