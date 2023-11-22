@@ -32,6 +32,8 @@ class PersistArticleService
                 'published_at' => $article->getPublishedAt(),
                 'source_id' => $this->getSourceId($article->getSource()),
                 'article_category_id' => $this->getCategoryId($article->getCategory()),
+                'updated_at' => new \DateTime(),
+                'created_at' => new \DateTime(),
             ];
         }
         DB::table('articles')->insert($data);

@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Services\NewsFetchService\Concretes\NewsSourceFetchUrlAdapterGuzzle;
 use App\Services\NewsFetchService\Contracts\NewsSourceFetchUrlAdapterInterface;
+use App\Services\NewsReadService\Contracts\NewsReadServiceInterface;
+use App\Services\NewsReadService\NewsReadService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,6 +22,11 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->bind(NewsSourceFetchUrlAdapterInterface::class,function (){
             return $this->app->make(NewsSourceFetchUrlAdapterGuzzle::class);
+        });
+
+
+        $this->app->bind(NewsReadServiceInterface::class,function (){
+            return $this->app->make(NewsReadService::class);
         });
 
     }
