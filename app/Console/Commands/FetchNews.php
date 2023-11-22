@@ -19,7 +19,7 @@ class FetchNews extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'It puts messages in queue to fetch news';
 
     /**
      * Execute the console command.
