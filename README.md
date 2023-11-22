@@ -3,7 +3,8 @@
 
 # install instructions
 run following commands:
-1. php artisan migrate
+1. composer install
+2. php artisan migrate
 2. php artisan app:initial-app
 3. php artisan app:fetch-news ( for test on local server)
   - there is a laravel schedule task that can be used for production server.
