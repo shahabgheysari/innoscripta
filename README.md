@@ -3,14 +3,14 @@
 
 # install instructions
 run following commands:
-1. composer install
-2. php artisan migrate
-2. php artisan app:initial-app
-3. php artisan app:fetch-news ( for test on local server)
+1. `composer install`
+2. `php artisan migrate`
+2. `php artisan app:initial-app`
+3. `php artisan app:fetch-news` ( for test on local server)
   - there is a laravel schedule task that can be used for production server.
   it runs every hour and fetches news.
   **use this cron entry:** `* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1`
-4. php artisan php artisan queue:work
+4. `php artisan php artisan queue:work`
 
 
 
