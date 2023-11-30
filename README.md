@@ -15,6 +15,7 @@ run following commands:
 
 
 # use the following env values for the sake of test:
+(I added them to .env.example for easy setup)  
 
 ## API keys
 NEWS_SOURCE_NYT_API_KEY=5bD4StZTmIKQnsNDKJmoDJcyh4txSA6b
